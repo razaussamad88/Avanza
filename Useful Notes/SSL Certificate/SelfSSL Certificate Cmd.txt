@@ -1,0 +1,1 @@
+﻿C:\Program Files (x86)\IIS Resources\SelfSSL\SelfSSL.exe /N:CN=serverName|IPAddress /V:1000 /S:1 /K:2048 /T

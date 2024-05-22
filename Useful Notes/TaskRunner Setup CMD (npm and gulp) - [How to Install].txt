@@ -1,0 +1,95 @@
+after successfull installation of all components.
+
+run on cmd:
+
+1. dnvm update
+
+********
+Gulp errors:
+- Cannot find module 'unc-path-regex'
+Open CMD, goto Portal->Vision.Web dir, run 'npm install -D glob@4.2.2'
+
+npm install babel-runtime@5.3.0
+****************
+
+1. Open CMD, goto "Portal->Vision.Web" dir, run
+-> npm install rimraf -g 								(if rimraf not installed in %AppData%\npm)
+-> rimraf node_modules
+
+2. Restore Package from Visual Studio
+
+3. Open CMD, goto "Portal->Vision.Web" dir, run
+-> npm install gulp-uglify
+
+Error: Couldn't find preset "'es2015'" relative to directory 
+-> npm i babel-core -D
+
+
+otherwise. just update any targeted Library of NPM/Nuget
+
+*************************************
+'gulp' is not recognized as an internal or external command
+
+Click on new System variable and put NODE_PATH in system variable name and %AppData%\npm\node_modules into the variable value like below.
+And put PATH in system variable name and %AppData%\npm into the variable value like below.
+
+1. Install gulp globally.
+npm install -g gulp
+
+2. Install gulp locally in the project.
+npm install gulp
+
+3.Add below line in your package.json
+"scripts": {
+      "gulp": "gulp"
+ }
+ 
+4. Run gulp.
+npm run gulp
+*************************************
+Uninstalled Nodejs
+Installed Nodejs v0.10.29
+npm install -g npm
+npm install -g gulp
+
+
+
+npm cache clean --force
+npm cache verify
+
+
+
+
+*************************************
+
+How to fix "ReferenceError: primordials is not defined"
+
+
+1. In the same directory where you have package.json create a npm-shrinkwrap.json file with the following contents:
+
+    {
+      "dependencies": {
+        "graceful-fs": {
+            "version": "4.2.2"
+         }
+      }
+    }
+
+2. Run npm install, and don't worry, it will update npm-shrinkwrap.json with a bunch of content.
+
+3. Run gulp to start the project.
+
+
+*************************************
+
+
+npm install --save --save-exact react-scripts@5.0.0
+
+... and do not forget to delete your node_modules folder 
+and reinstall your dependencies by running ....
+
+npm install
+
+... if you encounter errors after upgrading
+
+

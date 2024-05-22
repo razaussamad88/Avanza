@@ -1,0 +1,10 @@
+Delete .vs folder (requires to close Visual Studio 2017)
+Run these commands in cmd As Administrator:
+
+cd "C:\Program Files (x86)\IIS Express"
+
+IisExpressAdminCmd.exe setupsslUrl -url:https://localhost:12345/ -UseSelfSigned
+
+Make sure you run VS2017 As Administrator and check if the issue addressed
+
+Note: https://localhost:12345/ is what is in your launchSettings.json for HTTPS

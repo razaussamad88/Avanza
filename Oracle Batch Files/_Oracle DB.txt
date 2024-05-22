@@ -1,0 +1,95 @@
+
+imp bbk_vision_web/Vision123$@ORCL_LOCAL_xx127 file='D:\E_Drive_HDD\Local-Databases\BBK_Vision_20180503_131856.dmp' log='D:\E_Drive_HDD\Local-Databases\BBK_Vision_Today.log' fromuser=vision_web touser=bbk_vision_web commit=Y
+sqlplus bbk_vision_web/Vision123$ as sysdba;
+
+
+sqlplus sys/sys@ORCL_LOCAL_xx127 as sysdba;
+
+create user bbk_vision_web identified by Vision123$;
+grant connect, unlimited tablespace, resource, dba to bbk_vision_web;
+grant create session to bbk_vision_web;
+grant sysdba to bbk_vision_web;
+
+quit;
+
+drop user bbk_vision_web cascade;
+
+##################################################################
+
+
+imp bbk_casablanca/casablanca@ORCL_LOCAL_xx127 file='D:\E_Drive_HDD\Local-Databases\BBK_RDV_20180503_131901.dmp' log='D:\E_Drive_HDD\Local-Databases\BBK_RDV_Today.log' fromuser=CASABLANCA touser=bbk_casablanca commit=Y
+sqlplus bbk_casablanca/casablanca as sysdba;
+
+
+sqlplus sys/sys@ORCL_LOCAL_xx127 as sysdba;
+
+create user bbk_casablanca_new identified by casablanca;
+grant connect, unlimited tablespace, resource, dba to bbk_casablanca_new;
+grant create session to bbk_casablanca_new;
+grant sysdba to bbk_casablanca_new;
+
+quit;
+
+
+drop user bbk_casablanca cascade;
+drop user bbk_casablanca_new cascade;
+
+
+ 
+impdp bbk_casablanca/casablanca@ORCL_LOCAL_xx127 DIRECTORY=DATA_PUMP_DIR DUMPFILE=BBK_RDV_20180503_131901.dmp
+
+SELECT directory_name, directory_path FROM dba_directories WHERE directory_name='DATA_PUMP_DIR';
+
+
+##################################################################
+
+select ksppinm, ksppstvl from x$ksppi a, x$ksppsv b where a.indx=b.indx and ksppinm like '%schema%synonym%';
+
+ALTER SYSTEM SET  "_enable_schema_synonyms"=true SCOPE=SPFILE;
+
+STARTUP FORCE;
+
+show parameter synonym
+
+CREATE SCHEMA SYNONYM CASABLANCA for BBK_CASABLANCA_NEW;
+CREATE SCHEMA SYNONYM ASPIRE for ASPIRE_BBK;
+
+
+
+##################################################################
+
+
+CREATE OR REPLACE DIRECTORY DATA_PUMP_DIR2 AS 'D:\OracleDatabases\Import\';
+GRANT ALL ON DIRECTORY DATA_PUMP_DIR2 TO PUBLIC;
+
+
+[below expdp and impdp both commands are tested]
+expdp BBK_VISION_WEB/Vision123$@ORCL_LOCAL_xx127 DIRECTORY=DATA_PUMP_DIR2 DUMPFILE='BBK_VISION_WEB.dmp' logfile=BBK_VISION_WEB.log schemas=BBK_VISION_WEB content=metadata_only VERSION=12.1.0.1.0 statistics=none
+	e.g. 	content=metadata_only	(schema only)
+			content=data_only
+			content=all				(both)
+
+impdp VISION_WEB/Vision123$@ORCL_LOCAL_xx127 DIRECTORY=DATA_PUMP_DIR2 DUMPFILE='BBK_VISION_WEB.dmp' logfile='BBK_VISION_WEB_import.log' REMAP_SCHEMA=BBK_VISION_WEB:VISION_WEB
+	e.g. 	REMAP_SCHEMA is use to mapping SOURCE and TARGET schemas during importing dump file. REMAP_SCHEMA=source_schemas:target_schemas
+
+
+##################################################################
+
+	
+SELECT tablespace_name, file_name, bytes / 1024/ 1024 MB FROM dba_data_files;
+
+
+
+CREATE TABLESPACE VISION_WEB
+  DATAFILE 'VISION_WEB.dat' 
+    SIZE 10M
+    REUSE
+    AUTOEXTEND ON NEXT 10M MAXSIZE 200M;
+
+##################################################################
+
+
+ $ orapwd file=%ORACLE_HOME%\database\PWDorcl.ora entries=100;
+
+##################################################################
+ 

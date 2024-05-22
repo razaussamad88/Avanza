@@ -1,0 +1,916 @@
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp -v
+CLI version: 2.3.0
+Local version: 3.9.1
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp
+gulp[18204]: c:\ws\src\node_contextify.cc:635: Assertion `args[1]->IsString()' failed.
+ 1: 00007FF7EE6EC6AA v8::internal::GCIdleTimeHandler::GCIdleTimeHandler+4506
+ 2: 00007FF7EE6C7416 node::MakeCallback+4534
+ 3: 00007FF7EE6C74CF node::MakeCallback+4719
+ 4: 00007FF7EE69B7C0 node::DecodeWrite+13120
+ 5: 00007FF7EEBF4382 std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+79442
+ 6: 00007FF7EEBF54E9 std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+83897
+ 7: 00007FF7EEBF482C std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+80636
+ 8: 00007FF7EEBF474B std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+80411
+ 9: 00000057226DC5C1
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp
+gulp[9360]: c:\ws\src\node_contextify.cc:635: Assertion `args[1]->IsString()' failed.
+ 1: 00007FF7EE6EC6AA v8::internal::GCIdleTimeHandler::GCIdleTimeHandler+4506
+ 2: 00007FF7EE6C7416 node::MakeCallback+4534
+ 3: 00007FF7EE6C74CF node::MakeCallback+4719
+ 4: 00007FF7EE69B7C0 node::DecodeWrite+13120
+ 5: 00007FF7EEBF4382 std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+79442
+ 6: 00007FF7EEBF54E9 std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+83897
+ 7: 00007FF7EEBF482C std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+80636
+ 8: 00007FF7EEBF474B std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+80411
+ 9: 000003579C9DC5C1
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>NPM /?
+
+Usage: npm <command>
+
+where <command> is one of:
+    access, adduser, audit, bin, bugs, c, cache, ci, cit,
+    clean-install, clean-install-test, completion, config,
+    create, ddp, dedupe, deprecate, dist-tag, docs, doctor,
+    edit, explore, fund, get, help, help-search, hook, i, init,
+    install, install-ci-test, install-test, it, link, list, ln,
+    login, logout, ls, org, outdated, owner, pack, ping, prefix,
+    profile, prune, publish, rb, rebuild, repo, restart, root,
+    run, run-script, s, se, search, set, shrinkwrap, star,
+    stars, start, stop, t, team, test, token, tst, un,
+    uninstall, unpublish, unstar, up, update, v, version, view,
+    whoami
+
+npm <command> -h  quick help on <command>
+npm -l            display full usage info
+npm help <term>   search for help on <term>
+npm help npm      involved overview
+
+Specify configs in the ini-formatted file:
+    C:\Users\muhammad.raza\.npmrc
+or on the command line via: npm <command> --key value
+Config info can be viewed via: npm help config
+
+npm@6.14.9 C:\Users\muhammad.raza\AppData\Roaming\npm\node_modules\npm
+
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>NPM -l
+
+Usage: npm <command>
+
+where <command> is one of:
+
+    access          npm access public [<package>]
+                    npm access restricted [<package>]
+                    npm access grant <read-only|read-write> <scope:team> [<package>]
+                    npm access revoke <scope:team> [<package>]
+                    npm access 2fa-required [<package>]
+                    npm access 2fa-not-required [<package>]
+                    npm access ls-packages [<user>|<scope>|<scope:team>]
+                    npm access ls-collaborators [<package> [<user>]]
+                    npm access edit [<package>]
+
+    adduser         npm adduser [--registry=url] [--scope=@orgname] [--auth-type=legacy] [--always-auth]
+
+                    aliases: login, add-user
+
+    audit
+                    npm audit [--json] [--production]
+                    npm audit fix [--force|--package-lock-only|--dry-run|--production|--only=(dev|prod)]
+
+    bin             npm bin [--global]
+
+    bugs            npm bugs [<pkgname>]
+
+                    alias: issues
+
+    cache           npm cache add <tarball file>
+                    npm cache add <folder>
+                    npm cache add <tarball url>
+                    npm cache add <git url>
+                    npm cache add <name>@<version>
+                    npm cache clean
+                    npm cache verify
+
+    ci              npm ci
+
+    completion      source <(npm completion)
+
+    config          npm config set <key> <value>
+                    npm config get [<key>]
+                    npm config delete <key>
+                    npm config list [--json]
+                    npm config edit
+                    npm set <key> <value>
+                    npm get [<key>]
+
+                    alias: c
+
+    dedupe          npm dedupe
+
+                    aliases: ddp, find-dupes
+
+    deprecate       npm deprecate <pkg>[@<version>] <message>
+
+    dist-tag        npm dist-tag add <pkg>@<version> [<tag>]
+                    npm dist-tag rm <pkg> <tag>
+                    npm dist-tag ls [<pkg>]
+
+                    alias: dist-tags
+
+    docs            npm docs <pkgname>
+                    npm docs .
+
+                    alias: home
+
+    doctor          npm doctor
+
+    edit            npm edit <pkg>[/<subpkg>...]
+
+    explore         npm explore <pkg> [ -- <command>]
+
+    fund            npm fund [--json]
+
+                    common options: npm fund [--browser] [[<@scope>/]<pkg> [--which=<fundingSourceNumber>]
+
+    get             npm get <key> <value> (See `npm config`)
+
+    help
+
+    help-search     npm help-search <text>
+
+    hook
+
+    init
+                    npm init [--force|-f|--yes|-y|--scope]
+                    npm init <@scope> (same as `npx <@scope>/create`)
+                    npm init [<@scope>/]<name> (same as `npx [<@scope>/]create-<name>`)
+
+                    aliases: create, innit
+
+    install
+                    npm install (with no args, in package dir)
+                    npm install [<@scope>/]<pkg>
+                    npm install [<@scope>/]<pkg>@<tag>
+                    npm install [<@scope>/]<pkg>@<version>
+                    npm install [<@scope>/]<pkg>@<version range>
+                    npm install <alias>@npm:<name>
+                    npm install <folder>
+                    npm install <tarball file>
+                    npm install <tarball url>
+                    npm install <git:// url>
+                    npm install <github username>/<github project>
+
+                    aliases: i, isntall, add
+                    common options: [--save-prod|--save-dev|--save-optional] [--save-exact] [--no-save]
+
+    install-ci-test
+                    npm install-ci-test [args]
+                    Same args as `npm ci`
+
+                    alias: cit
+
+    install-test
+                    npm install-test [args]
+                    Same args as `npm install`
+
+                    alias: it
+
+    link            npm link (in package dir)
+                    npm link [<@scope>/]<pkg>[@<version>]
+
+                    alias: ln
+
+    logout          npm logout [--registry=<url>] [--scope=<@scope>]
+
+    ls              npm ls [[<@scope>/]<pkg> ...]
+
+                    aliases: list, la, ll
+
+    org             npm org set orgname username [developer | admin | owner]
+                    npm org rm orgname username
+                    npm org ls orgname [<username>]
+
+    outdated        npm outdated [[<@scope>/]<pkg> ...]
+
+    owner           npm owner add <user> [<@scope>/]<pkg>
+                    npm owner rm <user> [<@scope>/]<pkg>
+                    npm owner ls [<@scope>/]<pkg>
+
+                    alias: author
+
+    pack            npm pack [[<@scope>/]<pkg>...] [--dry-run]
+
+    ping            npm ping
+                    ping registry
+
+    prefix          npm prefix [-g]
+
+    profile         npm profile enable-2fa [auth-only|auth-and-writes]
+                    npm profile disable-2fa
+                    npm profile get [<key>]
+                    npm profile set <key> <value>
+
+    prune           npm prune [[<@scope>/]<pkg>...] [--production]
+
+    publish         npm publish [<tarball>|<folder>] [--tag <tag>] [--access <public|restricted>] [--dry-run]
+
+                    Publishes '.' if no argument supplied
+
+                    Sets tag `latest` if no --tag specified
+
+    rebuild         npm rebuild [[<@scope>/<name>]...]
+
+                    alias: rb
+
+    repo            npm repo [<pkg>]
+
+    restart         npm restart [-- <args>]
+
+    root            npm root [-g]
+
+    run-script      npm run-script <command> [-- <args>...]
+
+                    aliases: run, rum, urn
+
+    search          npm search [--long] [search terms ...]
+
+                    aliases: s, se, find
+
+    set             npm set <key> <value> (See `npm config`)
+
+    shrinkwrap      npm shrinkwrap
+
+    star            npm star [<pkg>...]
+                    npm unstar [<pkg>...]
+
+                    alias: unstar
+
+    stars           npm stars [<user>]
+
+    start           npm start [-- <args>]
+
+    stop            npm stop [-- <args>]
+
+    team            npm team create <scope:team> [--otp <otpcode>]
+                    npm team destroy <scope:team> [--otp <otpcode>]
+                    npm team add <scope:team> <user> [--otp <otpcode>]
+                    npm team rm <scope:team> <user> [--otp <otpcode>]
+                    npm team ls <scope>|<scope:team>
+                    npm team edit <scope:team>
+
+    test            npm test [-- <args>]
+
+                    aliases: tst, t
+
+    token           npm token list
+                    npm token revoke <tokenKey>
+                    npm token create [--read-only] [--cidr=list]
+
+
+    uninstall       npm uninstall [<@scope>/]<pkg>[@<version>]... [--save-prod|--save-dev|--save-optional] [--no-save]
+
+                    aliases: un, unlink, remove, rm, r
+
+    unpublish
+                    npm unpublish [<@scope>/]<pkg>@<version>
+                    npm unpublish [<@scope>/]<pkg> --force
+
+    update          npm update [-g] [<pkg>...]
+
+                    aliases: up, upgrade, udpate
+
+    version         npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]
+                    (run in package dir)
+                    'npm -v' or 'npm --version' to print npm version (6.14.9)
+                    'npm view <pkg> version' to view a package's published version
+                    'npm ls' to inspect current package/dependency versions
+
+    view            npm view [<@scope>/]<pkg>[@<version>] [<field>[.subfield]...]
+
+                    aliases: v, info, show
+
+    whoami          npm whoami [--registry <registry>]
+                    (just prints username according to given registry)
+
+npm <command> -h  quick help on <command>
+npm -l            display full usage info
+npm help <term>   search for help on <term>
+npm help npm      involved overview
+
+Specify configs in the ini-formatted file:
+    C:\Users\muhammad.raza\.npmrc
+or on the command line via: npm <command> --key value
+Config info can be viewed via: npm help config
+
+npm@6.14.9 C:\Users\muhammad.raza\AppData\Roaming\npm\node_modules\npm
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>NPM install
+npm WARN react-checkbox-tree@0.6.4 requires a peer of react@^15.3.0 but none is installed. You must install peer dependencies yourself.
+npm WARN The package gulp is included as both a dev and production dependency.
+npm WARN The package gulp-uglify is included as both a dev and production dependency.
+npm WARN The package babel-preset-es2015 is included as both a dev and production dependency.
+npm WARN The package babel-preset-react is included as both a dev and production dependency.
+npm WARN The package gulp-minify is included as both a dev and production dependency.
+npm WARN The package babelify is included as both a dev and production dependency.
+npm WARN The package browserify is included as both a dev and production dependency.
+npm WARN The package vinyl-source-stream is included as both a dev and production dependency.
+npm WARN The package streamify is included as both a dev and production dependency.
+npm WARN The package gulp-rename is included as both a dev and production dependency.
+npm WARN The package event-stream is included as both a dev and production dependency.
+npm WARN The package glob is included as both a dev and production dependency.
+npm WARN The package gulp-watch is included as both a dev and production dependency.
+npm WARN The package classnames is included as both a dev and production dependency.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+audited 1048 packages in 5.144s
+found 167 vulnerabilities (33 low, 55 moderate, 63 high, 16 critical)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp
+gulp[2416]: c:\ws\src\node_contextify.cc:635: Assertion `args[1]->IsString()' failed.
+ 1: 00007FF7EE6EC6AA v8::internal::GCIdleTimeHandler::GCIdleTimeHandler+4506
+ 2: 00007FF7EE6C7416 node::MakeCallback+4534
+ 3: 00007FF7EE6C74CF node::MakeCallback+4719
+ 4: 00007FF7EE69B7C0 node::DecodeWrite+13120
+ 5: 00007FF7EEBF4382 std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+79442
+ 6: 00007FF7EEBF54E9 std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+83897
+ 7: 00007FF7EEBF482C std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+80636
+ 8: 00007FF7EEBF474B std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+80411
+ 9: 00000171F155C5C1
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm audit fix
+npm ERR! code ELOCKVERIFY
+npm ERR! Errors were found in your package-lock.json, run  npm install  to fix them.
+npm ERR!     Invalid: lock file's gulp@3.9.1 does not satisfy gulp@^4.0.0
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\muhammad.raza\AppData\Roaming\npm-cache\_logs\2022-02-09T10_30_22_622Z-debug.log
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm audit fix
+npm ERR! code ELOCKVERIFY
+npm ERR! Errors were found in your package-lock.json, run  npm install  to fix them.
+npm ERR!     Invalid: lock file's gulp@3.9.1 does not satisfy gulp@^4.0.0
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\muhammad.raza\AppData\Roaming\npm-cache\_logs\2022-02-09T10_30_38_590Z-debug.log
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp
+gulp[7856]: c:\ws\src\node_contextify.cc:635: Assertion `args[1]->IsString()' failed.
+ 1: 00007FF7EE6EC6AA v8::internal::GCIdleTimeHandler::GCIdleTimeHandler+4506
+ 2: 00007FF7EE6C7416 node::MakeCallback+4534
+ 3: 00007FF7EE6C74CF node::MakeCallback+4719
+ 4: 00007FF7EE69B7C0 node::DecodeWrite+13120
+ 5: 00007FF7EEBF4382 std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+79442
+ 6: 00007FF7EEBF54E9 std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+83897
+ 7: 00007FF7EEBF482C std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+80636
+ 8: 00007FF7EEBF474B std::vector<v8::internal::compiler::MoveOperands * __ptr64,v8::internal::ZoneAllocator<v8::internal::compiler::MoveOperands * __ptr64> >::_Umove+80411
+ 9: 000002842EEDC5C1
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>NPM install
+npm WARN The package gulp is included as both a dev and production dependency.
+npm WARN The package gulp-uglify is included as both a dev and production dependency.
+npm WARN The package babel-preset-es2015 is included as both a dev and production dependency.
+npm WARN The package babel-preset-react is included as both a dev and production dependency.
+npm WARN The package gulp-minify is included as both a dev and production dependency.
+npm WARN The package babelify is included as both a dev and production dependency.
+npm WARN The package browserify is included as both a dev and production dependency.
+npm WARN The package vinyl-source-stream is included as both a dev and production dependency.
+npm WARN The package streamify is included as both a dev and production dependency.
+npm WARN The package gulp-rename is included as both a dev and production dependency.
+npm WARN The package event-stream is included as both a dev and production dependency.
+npm WARN The package glob is included as both a dev and production dependency.
+npm WARN The package gulp-watch is included as both a dev and production dependency.
+npm WARN The package classnames is included as both a dev and production dependency.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 1037 packages from 409 contributors and audited 1048 packages in 181.086s
+found 167 vulnerabilities (33 low, 55 moderate, 63 high, 16 critical)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>NPM Audit fix
+
+Usage: npm <command>
+
+where <command> is one of:
+    access, adduser, audit, bin, bugs, c, cache, ci, cit,
+    clean-install, clean-install-test, completion, config,
+    create, ddp, dedupe, deprecate, dist-tag, docs, doctor,
+    edit, explore, fund, get, help, help-search, hook, i, init,
+    install, install-ci-test, install-test, it, link, list, ln,
+    login, logout, ls, org, outdated, owner, pack, ping, prefix,
+    profile, prune, publish, rb, rebuild, repo, restart, root,
+    run, run-script, s, se, search, set, shrinkwrap, star,
+    stars, start, stop, t, team, test, token, tst, un,
+    uninstall, unpublish, unstar, up, update, v, version, view,
+    whoami
+
+npm <command> -h  quick help on <command>
+npm -l            display full usage info
+npm help <term>   search for help on <term>
+npm help npm      involved overview
+
+Specify configs in the ini-formatted file:
+    C:\Users\muhammad.raza\.npmrc
+or on the command line via: npm <command> --key value
+Config info can be viewed via: npm help config
+
+npm@6.14.9 C:\Users\muhammad.raza\AppData\Roaming\npm\node_modules\npm
+
+Did you mean one of these?
+    audit
+    edit
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>NPM Audit
+
+Usage: npm <command>
+
+where <command> is one of:
+    access, adduser, audit, bin, bugs, c, cache, ci, cit,
+    clean-install, clean-install-test, completion, config,
+    create, ddp, dedupe, deprecate, dist-tag, docs, doctor,
+    edit, explore, fund, get, help, help-search, hook, i, init,
+    install, install-ci-test, install-test, it, link, list, ln,
+    login, logout, ls, org, outdated, owner, pack, ping, prefix,
+    profile, prune, publish, rb, rebuild, repo, restart, root,
+    run, run-script, s, se, search, set, shrinkwrap, star,
+    stars, start, stop, t, team, test, token, tst, un,
+    uninstall, unpublish, unstar, up, update, v, version, view,
+    whoami
+
+npm <command> -h  quick help on <command>
+npm -l            display full usage info
+npm help <term>   search for help on <term>
+npm help npm      involved overview
+
+Specify configs in the ini-formatted file:
+    C:\Users\muhammad.raza\.npmrc
+or on the command line via: npm <command> --key value
+Config info can be viewed via: npm help config
+
+npm@6.14.9 C:\Users\muhammad.raza\AppData\Roaming\npm\node_modules\npm
+
+Did you mean one of these?
+    audit
+    edit
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm audit fix
+npm ERR! code ELOCKVERIFY
+npm ERR! Errors were found in your package-lock.json, run  npm install  to fix them.
+npm ERR!     Invalid: lock file's gulp@3.9.1 does not satisfy gulp@^4.0.0
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\muhammad.raza\AppData\Roaming\npm-cache\_logs\2022-02-09T10_35_42_720Z-debug.log
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm audit fix
+npm ERR! code EAUDITNOLOCK
+npm ERR! audit Neither npm-shrinkwrap.json nor package-lock.json found: Cannot audit a project without a lockfile
+npm ERR! audit Try creating one first with: npm i --package-lock-only
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\muhammad.raza\AppData\Roaming\npm-cache\_logs\2022-02-09T10_41_16_102Z-debug.log
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm i --package-lock-only
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.0.0 (node_modules\gulp-watch\node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN react-checkbox-tree@0.6.4 requires a peer of react@^15.3.0 but none is installed. You must install peer dependencies yourself.
+npm WARN The package gulp is included as both a dev and production dependency.
+npm WARN The package gulp-uglify is included as both a dev and production dependency.
+npm WARN The package babel-preset-es2015 is included as both a dev and production dependency.
+npm WARN The package babel-preset-react is included as both a dev and production dependency.
+npm WARN The package gulp-minify is included as both a dev and production dependency.
+npm WARN The package babelify is included as both a dev and production dependency.
+npm WARN The package browserify is included as both a dev and production dependency.
+npm WARN The package vinyl-source-stream is included as both a dev and production dependency.
+npm WARN The package streamify is included as both a dev and production dependency.
+npm WARN The package gulp-rename is included as both a dev and production dependency.
+npm WARN The package event-stream is included as both a dev and production dependency.
+npm WARN The package glob is included as both a dev and production dependency.
+npm WARN The package gulp-watch is included as both a dev and production dependency.
+npm WARN The package classnames is included as both a dev and production dependency.
+
+added 3 packages and audited 1048 packages in 6.42s
+found 167 vulnerabilities (33 low, 55 moderate, 63 high, 16 critical)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm audit fix
+npm WARN deprecated core-js@2.6.12: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+
+> core-js@2.6.12 postinstall D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\babel-core\node_modules\babel-register\node_modules\core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+
+The project needs your help! Please consider supporting of core-js on Open Collective or Patreon:
+> https://opencollective.com/core-js
+> https://www.patreon.com/zloirock
+
+Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
+
+npm WARN react-checkbox-tree@0.6.4 requires a peer of react@^15.3.0 but none is installed. You must install peer dependencies yourself.
+npm WARN The package gulp is included as both a dev and production dependency.
+npm WARN The package gulp-uglify is included as both a dev and production dependency.
+npm WARN The package babel-preset-es2015 is included as both a dev and production dependency.
+npm WARN The package babel-preset-react is included as both a dev and production dependency.
+npm WARN The package gulp-minify is included as both a dev and production dependency.
+npm WARN The package babelify is included as both a dev and production dependency.
+npm WARN The package browserify is included as both a dev and production dependency.
+npm WARN The package vinyl-source-stream is included as both a dev and production dependency.
+npm WARN The package streamify is included as both a dev and production dependency.
+npm WARN The package gulp-rename is included as both a dev and production dependency.
+npm WARN The package event-stream is included as both a dev and production dependency.
+npm WARN The package glob is included as both a dev and production dependency.
+npm WARN The package gulp-watch is included as both a dev and production dependency.
+npm WARN The package classnames is included as both a dev and production dependency.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ lodash@4.17.21
++ vinyl-buffer@1.0.1
++ moment@2.29.1
++ bower@1.8.13
++ jquery-ui@1.13.1
+added 170 packages from 249 contributors, removed 106 packages, updated 14 packages and moved 26 packages in 65.478s
+
+5 packages are looking for funding
+  run `npm fund` for details
+
+fixed 122 of 167 vulnerabilities in 1048 scanned packages
+  11 vulnerabilities required manual review and could not be updated
+  10 package updates for 34 vulnerabilities involved breaking changes
+  (use `npm audit fix --force` to install breaking changes; or refer to `npm audit` for steps to fix these manually)
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm audit fix --force
+npm WARN using --force I sure hope you know what you are doing.
+npm ERR! code ELOCKVERIFY
+npm ERR! Errors were found in your package-lock.json, run  npm install  to fix them.
+npm ERR!     Missing: jquery@2.1.4
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\muhammad.raza\AppData\Roaming\npm-cache\_logs\2022-02-09T10_43_28_735Z-debug.log
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm i --package-lock-only
+npm WARN react-checkbox-tree@0.6.4 requires a peer of react@^15.3.0 but none is installed. You must install peer dependencies yourself.
+npm WARN The package babel-preset-es2015 is included as both a dev and production dependency.
+npm WARN The package babel-preset-react is included as both a dev and production dependency.
+npm WARN The package babelify is included as both a dev and production dependency.
+npm WARN The package browserify is included as both a dev and production dependency.
+npm WARN The package classnames is included as both a dev and production dependency.
+npm WARN The package event-stream is included as both a dev and production dependency.
+npm WARN The package glob is included as both a dev and production dependency.
+npm WARN The package gulp is included as both a dev and production dependency.
+npm WARN The package gulp-minify is included as both a dev and production dependency.
+npm WARN The package gulp-rename is included as both a dev and production dependency.
+npm WARN The package gulp-uglify is included as both a dev and production dependency.
+npm WARN The package gulp-watch is included as both a dev and production dependency.
+npm WARN The package streamify is included as both a dev and production dependency.
+npm WARN The package vinyl-source-stream is included as both a dev and production dependency.
+
+added 5 packages and audited 1111 packages in 5.262s
+
+5 packages are looking for funding
+  run `npm fund` for details
+
+found 46 vulnerabilities (11 low, 12 moderate, 17 high, 6 critical)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm audit fix
+npm WARN react-checkbox-tree@0.6.4 requires a peer of react@^15.3.0 but none is installed. You must install peer dependencies yourself.
+npm WARN The package babel-preset-es2015 is included as both a dev and production dependency.
+npm WARN The package babel-preset-react is included as both a dev and production dependency.
+npm WARN The package babelify is included as both a dev and production dependency.
+npm WARN The package browserify is included as both a dev and production dependency.
+npm WARN The package classnames is included as both a dev and production dependency.
+npm WARN The package event-stream is included as both a dev and production dependency.
+npm WARN The package glob is included as both a dev and production dependency.
+npm WARN The package gulp is included as both a dev and production dependency.
+npm WARN The package gulp-minify is included as both a dev and production dependency.
+npm WARN The package gulp-rename is included as both a dev and production dependency.
+npm WARN The package gulp-uglify is included as both a dev and production dependency.
+npm WARN The package gulp-watch is included as both a dev and production dependency.
+npm WARN The package streamify is included as both a dev and production dependency.
+npm WARN The package vinyl-source-stream is included as both a dev and production dependency.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 4 packages from 3 contributors and updated 1 package in 5.376s
+
+5 packages are looking for funding
+  run `npm fund` for details
+
+fixed 4 of 46 vulnerabilities in 1111 scanned packages
+  9 vulnerabilities required manual review and could not be updated
+  10 package updates for 33 vulnerabilities involved breaking changes
+  (use `npm audit fix --force` to install breaking changes; or refer to `npm audit` for steps to fix these manually)
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm audit fix --force
+npm WARN using --force I sure hope you know what you are doing.
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+
+> fsevents@1.2.13 install D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\fsevents
+> node install.js
+
+
+Skipping 'fsevents' build as platform win32 is not supported
+npm notice save gulp-uglify is being moved from dependencies to devDependencies
+npm notice save gulp-watch is being moved from dependencies to devDependencies
+npm notice save gulp-minify is being moved from dependencies to devDependencies
+npm notice save gulp is being moved from dependencies to devDependencies
+npm WARN griddle-react@0.6.1 requires a peer of react@^0.14.3 || ^15.0.1 but none is installed. You must install peer dependencies yourself.
+npm WARN react-chartjs@0.8.0 requires a peer of chart.js@^1.1.1 but none is installed. You must install peer dependencies yourself.
+npm WARN react-checkbox-tree@0.6.4 requires a peer of react@^15.3.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-dom@15.0.1 requires a peer of react@^15.0.1 but none is installed. You must install peer dependencies yourself.
+npm WARN react-icheck@0.3.4 requires a peer of react@^0.14.0 || ^15.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-select@1.0.0-rc.2 requires a peer of react@^0.14 || ^15.0.0-rc || ^15.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-input-autosize@1.1.3 requires a peer of react@^0.14 || ^15.0.0-rc || ^15.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-tabs@0.7.0 requires a peer of react@^0.14.7 || ^15.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN The package babel-preset-es2015 is included as both a dev and production dependency.
+npm WARN The package babel-preset-react is included as both a dev and production dependency.
+npm WARN The package babelify is included as both a dev and production dependency.
+npm WARN The package browserify is included as both a dev and production dependency.
+npm WARN The package classnames is included as both a dev and production dependency.
+npm WARN The package event-stream is included as both a dev and production dependency.
+npm WARN The package glob is included as both a dev and production dependency.
+npm WARN The package gulp-rename is included as both a dev and production dependency.
+npm WARN The package streamify is included as both a dev and production dependency.
+npm WARN The package vinyl-source-stream is included as both a dev and production dependency.
+
++ jquery@3.6.0
++ react@17.0.2
++ chart.js@3.7.0
++ gulp-clean-css@4.3.0
++ gulp-uglify@3.0.2
++ gulp-watch@5.0.1
++ gulp-minify@3.1.0
++ gulp@4.0.2
++ flux@4.0.3
++ validator@13.7.0
+added 175 packages from 170 contributors, removed 458 packages, updated 22 packages and moved 50 packages in 53.848s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+fixed 35 of 46 vulnerabilities in 1114 scanned packages
+  11 vulnerabilities required manual review and could not be updated
+  10 package updates for 33 vulnerabilities involved breaking changes
+  (installed due to `--force` option)
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp
+[15:46:03] Using gulpfile D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\gulpfile.js
+[15:46:03] Task never defined: default
+[15:46:03] To list available tasks, try running: gulp --tasks
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp -v
+CLI version: 2.3.0
+Local version: 4.0.2
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp minifyjs
+[15:47:33] Using gulpfile D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\gulpfile.js
+[15:47:33] Task never defined: minifyjs - did you mean? minifyJs
+[15:47:33] To list available tasks, try running: gulp --tasks
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp minifyJs
+[15:47:43] Using gulpfile D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\gulpfile.js
+[15:47:43] Starting 'minifyJs'...
+entry: ./wwwroot/js/language/i18n.js
+entry: ./wwwroot/js/language/i18nLoader.js
+[15:47:43] 'minifyJs' errored after 28 ms
+[15:47:43] Error: File not found with singular glob: D:/Avanza.Projects/BBK ICM Upgrade/Vision.Web/Portals/Vision.Web/wwwroot/js/language/i18n.js (if this was purposeful, use `allowEmpty` option)
+    at Glob.<anonymous> (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\readable.js:84:17)
+    at Object.onceWrapper (events.js:286:20)
+    at Glob.emit (events.js:198:13)
+    at Glob.EventEmitter.emit (domain.js:448:20)
+    at Glob._finish (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:194:8)
+    at done (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:179:14)
+    at Glob._processSimple2 (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:685:12)
+    at D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:673:10
+    at Glob._stat2 (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:769:12)
+    at lstatcb_ (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:761:12)
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp
+[15:48:10] Using gulpfile D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\gulpfile.js
+[15:48:10] Task never defined: default
+[15:48:10] To list available tasks, try running: gulp --tasks
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp minifyJs
+[15:48:18] Using gulpfile D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\gulpfile.js
+[15:48:18] Starting 'minifyJs'...
+entry: ./wwwroot/js/language/i18n.js
+entry: ./wwwroot/js/language/i18nLoader.js
+[15:48:18] 'minifyJs' errored after 28 ms
+[15:48:18] Error: File not found with singular glob: D:/Avanza.Projects/BBK ICM Upgrade/Vision.Web/Portals/Vision.Web/wwwroot/js/language/i18n.js (if this was purposeful, use `allowEmpty` option)
+    at Glob.<anonymous> (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\readable.js:84:17)
+    at Object.onceWrapper (events.js:286:20)
+    at Glob.emit (events.js:198:13)
+    at Glob.EventEmitter.emit (domain.js:448:20)
+    at Glob._finish (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:194:8)
+    at done (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:179:14)
+    at Glob._processSimple2 (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:685:12)
+    at D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:673:10
+    at Glob._stat2 (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:769:12)
+    at lstatcb_ (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:761:12)
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm i --package-lock-only
+npm WARN griddle-react@0.6.1 requires a peer of react@^0.14.3 || ^15.0.1 but none is installed. You must install peer dependencies yourself.
+npm WARN react-chartjs@0.8.0 requires a peer of chart.js@^1.1.1 but none is installed. You must install peer dependencies yourself.
+npm WARN react-checkbox-tree@0.6.4 requires a peer of react@^15.3.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-dom@15.0.1 requires a peer of react@^15.0.1 but none is installed. You must install peer dependencies yourself.
+npm WARN react-icheck@0.3.4 requires a peer of react@^0.14.0 || ^15.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-select@1.0.0-rc.2 requires a peer of react@^0.14 || ^15.0.0-rc || ^15.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-input-autosize@1.1.3 requires a peer of react@^0.14 || ^15.0.0-rc || ^15.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-tabs@0.7.0 requires a peer of react@^0.14.7 || ^15.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN The package babel-preset-es2015 is included as both a dev and production dependency.
+npm WARN The package babel-preset-react is included as both a dev and production dependency.
+npm WARN The package babelify is included as both a dev and production dependency.
+npm WARN The package browserify is included as both a dev and production dependency.
+npm WARN The package classnames is included as both a dev and production dependency.
+npm WARN The package event-stream is included as both a dev and production dependency.
+npm WARN The package glob is included as both a dev and production dependency.
+npm WARN The package gulp-rename is included as both a dev and production dependency.
+npm WARN The package streamify is included as both a dev and production dependency.
+npm WARN The package vinyl-source-stream is included as both a dev and production dependency.
+
+updated 1 package and audited 827 packages in 4.803s
+
+10 packages are looking for funding
+  run `npm fund` for details
+
+found 12 vulnerabilities (5 low, 1 moderate, 6 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm audit fix
+npm WARN griddle-react@0.6.1 requires a peer of react@^0.14.3 || ^15.0.1 but none is installed. You must install peer dependencies yourself.
+npm WARN react-chartjs@0.8.0 requires a peer of chart.js@^1.1.1 but none is installed. You must install peer dependencies yourself.
+npm WARN react-checkbox-tree@0.6.4 requires a peer of react@^15.3.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-dom@15.0.1 requires a peer of react@^15.0.1 but none is installed. You must install peer dependencies yourself.
+npm WARN react-icheck@0.3.4 requires a peer of react@^0.14.0 || ^15.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-select@1.0.0-rc.2 requires a peer of react@^0.14 || ^15.0.0-rc || ^15.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-input-autosize@1.1.3 requires a peer of react@^0.14 || ^15.0.0-rc || ^15.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-tabs@0.7.0 requires a peer of react@^0.14.7 || ^15.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN The package babel-preset-es2015 is included as both a dev and production dependency.
+npm WARN The package babel-preset-react is included as both a dev and production dependency.
+npm WARN The package babelify is included as both a dev and production dependency.
+npm WARN The package browserify is included as both a dev and production dependency.
+npm WARN The package classnames is included as both a dev and production dependency.
+npm WARN The package event-stream is included as both a dev and production dependency.
+npm WARN The package glob is included as both a dev and production dependency.
+npm WARN The package gulp-rename is included as both a dev and production dependency.
+npm WARN The package streamify is included as both a dev and production dependency.
+npm WARN The package vinyl-source-stream is included as both a dev and production dependency.
+
+updated 1 package in 3.677s
+
+10 packages are looking for funding
+  run `npm fund` for details
+
+fixed 2 of 12 vulnerabilities in 827 scanned packages
+  10 vulnerabilities required manual review and could not be updated
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>npm audit fix --force
+npm WARN using --force I sure hope you know what you are doing.
+npm WARN griddle-react@0.6.1 requires a peer of react@^0.14.3 || ^15.0.1 but none is installed. You must install peer dependencies yourself.
+npm WARN react-chartjs@0.8.0 requires a peer of chart.js@^1.1.1 but none is installed. You must install peer dependencies yourself.
+npm WARN react-checkbox-tree@0.6.4 requires a peer of react@^15.3.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-dom@15.0.1 requires a peer of react@^15.0.1 but none is installed. You must install peer dependencies yourself.
+npm WARN react-icheck@0.3.4 requires a peer of react@^0.14.0 || ^15.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-select@1.0.0-rc.2 requires a peer of react@^0.14 || ^15.0.0-rc || ^15.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-input-autosize@1.1.3 requires a peer of react@^0.14 || ^15.0.0-rc || ^15.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-tabs@0.7.0 requires a peer of react@^0.14.7 || ^15.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN The package babel-preset-es2015 is included as both a dev and production dependency.
+npm WARN The package babel-preset-react is included as both a dev and production dependency.
+npm WARN The package babelify is included as both a dev and production dependency.
+npm WARN The package browserify is included as both a dev and production dependency.
+npm WARN The package classnames is included as both a dev and production dependency.
+npm WARN The package event-stream is included as both a dev and production dependency.
+npm WARN The package glob is included as both a dev and production dependency.
+npm WARN The package gulp-rename is included as both a dev and production dependency.
+npm WARN The package streamify is included as both a dev and production dependency.
+npm WARN The package vinyl-source-stream is included as both a dev and production dependency.
+
+updated 1 package in 4.186s
+
+10 packages are looking for funding
+  run `npm fund` for details
+
+fixed 2 of 12 vulnerabilities in 827 scanned packages
+  10 vulnerabilities required manual review and could not be updated
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp minifyjs
+[15:49:11] Using gulpfile D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\gulpfile.js
+[15:49:11] Task never defined: minifyjs - did you mean? minifyJs
+[15:49:11] To list available tasks, try running: gulp --tasks
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp minifyJs
+[15:49:19] Using gulpfile D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\gulpfile.js
+[15:49:19] Starting 'minifyJs'...
+entry: ./wwwroot/js/language/i18n.js
+entry: ./wwwroot/js/language/i18nLoader.js
+[15:49:19] 'minifyJs' errored after 24 ms
+[15:49:19] Error: File not found with singular glob: D:/Avanza.Projects/BBK ICM Upgrade/Vision.Web/Portals/Vision.Web/wwwroot/js/language/i18n.js (if this was purposeful, use `allowEmpty` option)
+    at Glob.<anonymous> (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\readable.js:84:17)
+    at Object.onceWrapper (events.js:286:20)
+    at Glob.emit (events.js:198:13)
+    at Glob.EventEmitter.emit (domain.js:448:20)
+    at Glob._finish (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:194:8)
+    at done (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:179:14)
+    at Glob._processSimple2 (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:685:12)
+    at D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:673:10
+    at Glob._stat2 (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:769:12)
+    at lstatcb_ (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:761:12)
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp --tasks
+[15:49:37] Tasks for D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\gulpfile.js
+[15:49:37] ├── minifyJs
+[15:49:37] ├── 1-Analytics
+[15:49:37] ├── 2-Housekeeping
+[15:49:37] ├── 3-ICM
+[15:49:37] ├── 4-operations
+[15:49:37] ├── 5-RDVConfiguration
+[15:49:37] ├── 6-Reports
+[15:49:37] ├── 7-security
+[15:49:37] ├── 8-users
+[15:49:37] ├── 9-bundle
+[15:49:37] ├── pinmanager
+[15:49:37] ├── View_Payment_Inst
+[15:49:37] ├── ClassCode
+[15:49:37] ├── Analytics
+[15:49:37] ├── Reports
+[15:49:37] ├── Operations
+[15:49:37] ├── Dashboard-Prepaid
+[15:49:37] ├── Dashboard-Switch
+[15:49:37] ├── Admin-AutoPayment
+[15:49:37] ├── Admin-VoucherSafLog
+[15:49:37] ├── Admin-Beneficiary
+[15:49:37] ├── ICM-limitprofile
+[15:49:37] ├── ICM-permissionprofile
+[15:49:37] ├── ICM-alerts-monitoring
+[15:49:37] ├── ICM-alerts-group
+[15:49:37] ├── ICM-alerts-notification
+[15:49:37] ├── operations-TransactionLog
+[15:49:37] ├── operations-TransactionLogDetails
+[15:49:37] ├── operations-Accounts
+[15:49:37] ├── operations-Export
+[15:49:37] ├── operations-Import
+[15:49:37] ├── operations-Customers
+[15:49:37] ├── operations-SyncingData
+[15:49:37] ├── operations-CreditCards
+[15:49:37] ├── operations-ATMCards
+[15:49:37] ├── housekeeping-Branch
+[15:49:37] ├── housekeeping-Bank
+[15:49:37] ├── housekeeping-ClientInfo
+[15:49:37] ├── housekeeping-DBConnection
+[15:49:37] ├── housekeeping-SMTP
+[15:49:37] ├── housekeeping-Rdv
+[15:49:37] ├── housekeeping-switchConfig
+[15:49:37] ├── housekeeping-InterestRate
+[15:49:37] ├── housekeeping-ExchangeRate
+[15:49:37] ├── housekeeping-AccountType
+[15:49:37] ├── housekeeping-UtilityCompany
+[15:49:37] ├── housekeeping-AccountOfficer
+[15:49:37] ├── operations-UtilityConsumers
+[15:49:37] ├── Admin-2FA
+[15:49:37] ├── Import-Checker
+[15:49:37] ├── TwoFATransaction
+[15:49:37] ├── TwoFACustomer
+[15:49:37] ├── TwoFAGroup
+[15:49:37] ├── security
+[15:49:37] ├── security-account
+[15:49:37] ├── security-user
+[15:49:37] ├── security-group
+[15:49:37] ├── ICM-ImportChecker
+[15:49:37] ├── ICM-InternalBeneficiary
+[15:49:37] ├── ICM-EFTSBeneficiary
+[15:49:37] ├── ICM-SwiftBeneficiary
+[15:49:37] └── watch-jsx
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>gulp minifyJs
+[15:49:56] Using gulpfile D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\gulpfile.js
+[15:49:56] Starting 'minifyJs'...
+entry: ./wwwroot/js/language/i18n.js
+entry: ./wwwroot/js/language/i18nLoader.js
+[15:49:56] 'minifyJs' errored after 25 ms
+[15:49:56] Error: File not found with singular glob: D:/Avanza.Projects/BBK ICM Upgrade/Vision.Web/Portals/Vision.Web/wwwroot/js/language/i18n.js (if this was purposeful, use `allowEmpty` option)
+    at Glob.<anonymous> (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\readable.js:84:17)
+    at Object.onceWrapper (events.js:286:20)
+    at Glob.emit (events.js:198:13)
+    at Glob.EventEmitter.emit (domain.js:448:20)
+    at Glob._finish (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:194:8)
+    at done (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:179:14)
+    at Glob._processSimple2 (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:685:12)
+    at D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:673:10
+    at Glob._stat2 (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:769:12)
+    at lstatcb_ (D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web\node_modules\glob-stream\node_modules\glob\glob.js:761:12)
+
+D:\Avanza.Projects\BBK ICM Upgrade\Vision.Web\Portals\Vision.Web>

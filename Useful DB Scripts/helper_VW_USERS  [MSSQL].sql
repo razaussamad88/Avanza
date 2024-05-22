@@ -1,0 +1,21 @@
+
+IF OBJECT_ID('helper_VW_USERS', 'V') IS NOT NULL
+	Drop View helper_VW_USERS
+GO
+
+/* Execute on VSN */
+Create View helper_VW_USERS AS
+
+	Select 
+		U.APP_ID 'AppId', U.LOGIN_ID 'LoginId',U.FULL_NAME 'LoginName',U.IS_ACTIVE 'Active',U.POLICY_ID 'Policy',U.WHEN_DELETED 'Deleted',U.IS_ADMIN 'IsAdmin',U.IS_AD_USER 'AD User',
+		G.GROUP_ID 'Group' ,GP.PERMISSION_ID 'PermissionId',P.PERMISSION_NAME 'PermissionName',
+		CASE WHEN ISNULL(M.PERMISSION_ID, '') = '' THEN 'MAP NOT FOUND' ELSE 'MAP FOUND' END 'Mapping'
+
+	From SEC_USER U
+	Left Join SEC_USER_GROUP G On U.LOGIN_ID = G.LOGIN_ID
+	Left Join SEC_GROUP_PERMISSION GP ON G.GROUP_ID = GP.GROUP_ID
+	Left Join SEC_PERMISSION P ON P.PERMISSION_ID = GP.PERMISSION_ID
+	Left Join SEC_APP_PERMISSION_MAP M ON (M.PERMISSION_ID = GP.PERMISSION_ID AND P.PERMISSION_ID = M.PERMISSION_ID)
+	-- Order by AppId, Active, IsAdmin desc, LoginId, [Group], Mapping, PermissionId
+
+GO

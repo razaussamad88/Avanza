@@ -1,0 +1,7 @@
+Steps to Minimize Database in Size:
+***********************************
+1. Remove unnecessary data from database
+2. Set Database to Simple
+3. Shrink database
+4. Rebuild Indexes
+5. Export database to Backup (BAK) File

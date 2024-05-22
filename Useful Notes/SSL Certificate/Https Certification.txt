@@ -1,0 +1,62 @@
+Note:
+PFX file is for IIS (Server Certificate - Web Hosting)
+CER file is for install certificate into Trusted Root in every machine.
+If using CA Root certificate, no requirement for installing certificate.
+
+
+### GENERATE PASSWORD USING MAKECERT USING ROOT (ROOT -> MYDOMAIN.COM) ###
+
+makecert.exe -n "CN=CARoot" -r -pe -a sha1 -len 2048 -cy authority -sv CARoot.pvk CARoot.cer
+pvk2pfx.exe -pvk CARoot.pvk -spc CARoot.cer -pfx CARoot.pfx -po avanza
+
+makecert.exe -n "CN=vision.bbkonline.com" -iv CARoot.pvk -ic CARoot.cer -pe -a sha1 -len 2048 -m 12 -sky exchange -eku 1.3.6.1.5.5.7.3.1 -sv vision_bbkonline.pvk vision_bbkonline.cer
+pvk2pfx.exe -pvk vision_bbkonline.pvk -spc vision_bbkonline.cer -pfx vision_bbkonline.pfx -po avanza
+
+
+### GENERATE PASSWORD USING MAKECERT ON ROOT (MYDOMAIN.COM) ###
+
+makecert.exe -n "CN=10.1.18.41" -r -pe -a sha1 -len 2048 -cy authority -sv 10_1_18_41.pvk 10_1_18_41.cer
+pvk2pfx.exe -pvk 10_1_18_41.pvk -spc 10_1_18_41.cer -pfx 10_1_18_41.pfx -po avanza
+
+************************************************************************************************
+************************************************************************************************
+
+
+### GENERATE PASSWORD USING OPENSSL ON ROOT (MYDOMAIN.COM) ###
+
+[generate PEM]
+openssl.exe req -x509 -nodes -days 730 -newkey rsa:2048 -keyout C:\OpenSSL-Win64\Output\cert.pem -out C:\OpenSSL-Win64\Output\cert.pem -config C:\OpenSSL-Win64\Output\PathToConfigFileAbove.txt
+
+[generate PEM -> PFX]
+openssl.exe pkcs12 -export -out C:\OpenSSL-Win64\Output\cert.pfx -in C:\OpenSSL-Win64\Output\cert.pem -name "vision.bbkonline.com" -passout pass:avanza
+
+[generate PFX -> CRT]
+openssl pkcs12 -in C:\OpenSSL-Win64\Output\cert.pfx -out C:\OpenSSL-Win64\Output\cert.crt -nokeys -clcerts
+
+[generate PFX -> CER]
+openssl x509 -inform pem -in C:\OpenSSL-Win64\Output\cert.crt -outform der -out C:\OpenSSL-Win64\Output\cert.cer
+
+
+[***** C:\OpenSSL-Win64\Output\PathToConfigFileAbove.txt *****]
+[req]
+distinguished_name  = req_distinguished_name
+x509_extensions     = v3_req
+prompt              = no
+[req_distinguished_name]
+C           = BH
+ST          = MANAMA
+L           = MANAMA
+O           = BBK
+OU          = IT
+#CN          = vision.bbkonline.com
+CN          = 10.1.18.41
+[v3_req] 
+keyUsage           = keyEncipherment, dataEncipherment
+extendedKeyUsage   = serverAuth
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = 10.1.18.41
+DNS.2 = 10.1.18.41
+IP.1 = 10.1.18.41
+IP.2 = 10.1.18.41
+[***** C:\OpenSSL-Win64\Output\PathToConfigFileAbove.txt *****]

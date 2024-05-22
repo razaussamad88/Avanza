@@ -1,0 +1,42 @@
+
+VISUAL STUDIO IS NOT STARTING IIS EXPRESS IN HTTPS.
+************************************************************************************************************
+Solution.
+
+On Start, type -> mmc.exe, File -> Add/Remove Snap-in..., Select Certificates -> Add> -> Computer account -> Local computer, Check under Certificates > Personal > Certificates. Make sure the localhost certificate that exist has a friendly name "IIS Express Development Certificate".
+
+
+
+
+1)Go to control panel
+
+2)Add Remove Programs
+
+3)Repair IIS Express
+
+4)Restarted my computer
+
+4)Next go to my documents->IIS Express->Config Files
+
+5)Take a copy of them and Remove those files from there
+
+6)Delete all items C:\Temp
+
+7)Check for .vs folder in your sln file and goto config folder in it
+
+8)Take a copy of that as well and remove the files inside it
+
+9)Clean your solution
+
+10)Restart Visual studio
+
+11)Build and run
+
+************************************************************************************************************
+
+
+Open CMD in Admin mode.
+
+cd C:\Program Files (x86)\IIS Express
+
+IisExpressAdminCmd.exe setupsslUrl -url:https://localhost:44387/ -UseSelfSigned

@@ -1,0 +1,25 @@
+
+-- working correctly (only single quote string)
+BEGIN
+   EXECUTE IMMEDIATE
+   q'{insert into Transaction_Log_BK99 (LOG_ID, Adapter_Id, Receive_Time, Error_Code,NODE_ID,END_POINT_ID,MESSAGE_ID) values (2, 255, '20220603180148', '127','EFT-BBKRDVSIT00', '6B66DB09-68F6-4C5F-BC4C-3CF52A80357E','63FD394C-67D9-428F-A87F-2571AC7085D4')}';
+END;
+/
+
+
+
+
+-- not working (double quote string)
+BEGIN
+   EXECUTE IMMEDIATE
+   q'{insert into Transaction_Log_BK99 (LOG_ID, Adapter_Id, Receive_Time, Error_Code,NODE_ID,END_POINT_ID,MESSAGE_ID) values (3, 255, ''20220603180148'', ''127'',''EFT-BBKRDVSIT00'', ''6B66DB09-68F6-4C5F-BC4C-3CF52A80357E'',''63FD394C-67D9-428F-A87F-2571AC7085D4'')}';
+END;
+/
+
+
+
+
+/*
+	https://docs.oracle.com/cd/A97630_01/text.920/a96518/cqspcl.htm#20741
+	http://www.dba-oracle.com/t_oracle_execute_immediate.htm
+*/

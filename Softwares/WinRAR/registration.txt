@@ -1,0 +1,11 @@
+
+******   WinRAR v.5.90 (64-bit)  |   WinRAR v.6.11 (64-bit)
+******************************************************************
+
+Extract "rarreg.zip" to Folder -> C:\Program Files\WinRAR -> Done
+
+Or 
+
+Copy file "rarreg.key" into WinRAR installation folder!
+
+******************************************************************

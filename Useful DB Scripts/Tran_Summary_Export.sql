@@ -1,0 +1,6 @@
+Select *
+Into _TRAN_SUMMARY_TMP00
+
+From TRANSACTION_SUMMARY with(nolock)
+where DATEDIFF(dd, DATEADD(dd,-(30*6),GETDATE()), RECEIVED_DATE)>=0
+order by RECEIVED_DATE desc

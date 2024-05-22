@@ -1,0 +1,56 @@
+
+
+
+=============================================================
+~~~~~~~  UNINSTALL SQL SERVER
+=============================================================
+
+Goto "E:\Softwares\MS SqlServer 2019\SQL2019\Developer_ENU"
+RUN ...
+		SETUP.EXE /FEATURES /ACTION=UNINSTALL
+
+
+########## END ##########
+
+
+
+
+
+
+
+	open CMD (command line) under admin rights and run :
+
+		net stop winnat
+		net start winnat
+		
+		net stop hns
+		net start hns
+
+
+
+taskkill /F /IM node.exe*
+
+
+
+netstat -n
+netstat -a
+netstat -b
+
+netstat -f | findstr 6944
+
+netstat -ano | findstr 6944
+
+6944
+
+
+tasklist| findstr 6944
+
+
+
+
+
+net config workstation
+
+
+
+

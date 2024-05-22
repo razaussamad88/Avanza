@@ -1,0 +1,125 @@
+
+
+
+************************************************
+===        P R E  -  R E Q U I S T E        ===  
+************************************************
+	
+	- Visual Studio Code 				( https://code.visualstudio.com/updates/v1_10   
+										  or any latest
+										  https://code.visualstudio.com/download/ )
+										  
+	- NodeJS v12.18.3					( https://nodejs.org/dist/v12.18.3/ )
+	- NVM (nvm-windows)					( https://github.com/coreybutler/nvm-windows/releases )
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+start powershell or Command Prompt as Administrator to use nvm-windows
+
+	nvm current: Display active version.
+	
+	nvm install <version> [arch]: 
+		The version can be a specific version, "latest" for the latest current version, or "lts" for the most recent LTS version. Optionally specify whether to install the 32 or 64 bit version (defaults to system arch). Set [arch] to "all" to install 32 AND 64 bit versions. Add --insecure to the end of this command to bypass SSL validation of the remote download server.
+	
+	nvm list [available]: List the node.js installations. Type available at the end to show a list of versions available for download.
+
+	nvm version: Displays the current running version of NVM for Windows.
+	
+	nvm uninstall <version>: Uninstall a specific version.
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+	
+node -v
+npm -v
+nvm install 12
+
+
+Goto CMD and install 'npm'
+
+	npm install -g npm
+
+
+Goto CMD and install 'nodemon'
+
+	npm install -g nodemon
+	
+
+Goto CMD and install 'serve'
+
+	npm install -g serve
+	or
+	npm i -g serve@10.0.1
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+[::: Install all modules under package.json in any project :::]
+
+Goto CMD and goto project folder
+	npm install
+		without any argument will install all packages found in package.json in node_modules folder.
+		
+	example:
+		cd "D:\$Avanza.Products\Maverick\backoffice-portal\"
+		npm install
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+[::: Uninstall all modules under package.json in any project :::]
+
+Goto CMD and goto project folder
+	npm install
+		without any argument will install all packages found in package.json in node_modules folder.
+		
+	example:
+		cd "D:\$Avanza.Products\Maverick\backoffice-portal\"
+		npx npkill
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+[:: Create ReactJS Project using VS ::]
+1. create project using VS2022 (javascript + webapi core)
+
+2. goto solution project folder and run 
+		npm init -f
+
+		e.g.
+		C:\Users\muhammad.raza\source\repos\Solution3\reactapp>npm init -f
+	
+
+OR
+
+
+[:: Create ReactJS Project using CMD ::]
+goto project folder and run 
+	npx create-react-app my-app
+
+	e.g.
+	D:\$Avanza.Temp\test123>npx create-react-app my-app
+	
+
+To start/run the project
+	npm start
+	
+	
+	
+OR
+
+
+[:: Create ReactJS Project using CRAO ::]
+
+	npm install -g create-react-app-offline
+	crao -n avanza-app
+	
+	npm install axios@0.21.1
+	npm i esm@3.2.25
+	
+	cd avanza-app
+	npm start
+	
+	
+	
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄

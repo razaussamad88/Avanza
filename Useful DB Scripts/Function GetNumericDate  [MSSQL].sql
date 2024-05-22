@@ -1,0 +1,14 @@
+CREATE FUNCTION dbo.GetNumericDate
+(
+    @P_Date datetime
+)
+RETURNS VARCHAR(MAX)
+BEGIN
+
+    RETURN CONVERT(VARCHAR, @P_Date,112) + REPLACE(CONVERT(VARCHAR, @P_Date,108), ':', '');
+
+END;
+
+
+-- SELECT dbo.GetNumericDate(GETDATE()), GETDATE()
+-- 20221017132434	2022-10-17 13:24:34.793

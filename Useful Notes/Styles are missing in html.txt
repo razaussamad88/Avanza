@@ -1,0 +1,41 @@
+
+
+\BackofficeEngine\SymmetryWeb\App_Start\BundleConfig.cs
+
+in method :: RegisterBundles()
+
+            // -- WHEN in CONFIG file ::      <compilation debug="true" targetFramework="4.6.2" />
+            BundleTable.EnableOptimizations = true;
+            /*
+             "EnableOptimizations:true"
+                it will generate single html tag i.e.       <link href="/bundles/css/index?v=iFMIWxVlS1apHBEIuyDs4VKnNNazKLjGL5PGC3ngFHg1" rel="stylesheet">
+                this will distrub inner CSS image url. bcoz style files are merged into single file.
+             */
+
+
+            // -- WHEN in CONFIG file ::      <compilation debug="false" targetFramework="4.6.2" />
+            BundleTable.EnableOptimizations = false;
+            /*
+             "EnableOptimizations:false"
+                it will generate multiple html tag i.e.     <link href="~/wwwroot/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+                                                            <link href="~/wwwroot/lib/icheck/skins/all.css" rel="stylesheet">
+                                                            <link href="~/wwwroot/lib/toastr/toastr.css" rel="stylesheet">
+                                                            <link href="~/wwwroot/lib/footable/css/footable.core.css" rel="stylesheet">
+                                                            <link href="~/wwwroot/lib/metisMenu/dist/metisMenu.css" rel="stylesheet">
+                                                            <link href="~/wwwroot/css/animate.css" rel="stylesheet">
+                                                            <link href="~/wwwroot/css/style.css" rel="stylesheet">
+                                                            <link href="~/wwwroot/css/site.css" rel="stylesheet">
+                                                            <link href="~/wwwroot/css/loading-spinner/circle.css" rel="stylesheet">
+                                                            <link href="~/wwwroot/css/plugins/datatables/datatables.min.css" rel="stylesheet">
+                                                            
+                this will not distrub inner CSS image url. bcoz style files are deployed in release as-is.
+             */
+
+			 
+########################################################################################################################################################################################################################
+
+
+N O T E :
+----------
+stylesheets are mutual exclusives.
+remove either compressed style (.min.css) or uncompressed style (.css) sheet from wwwroot/css/*

@@ -1,0 +1,118 @@
+
+
+
+************************************************
+===        P R E  -  R E Q U I S T E        ===  
+************************************************
+	
+	- Visual Studio Code 				( https://code.visualstudio.com/updates/v1_10   
+										  or any latest
+										  https://code.visualstudio.com/download/ )
+										  
+	- NodeJS v12.18.3					( https://nodejs.org/dist/v12.18.3/ )
+	- NVM (nvm-windows)					( https://github.com/coreybutler/nvm-windows/releases )
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+start powershell or Command Prompt as Administrator to use nvm-windows
+
+	nvm current: Display active version.
+	
+	nvm install <version> [arch]: 
+		The version can be a specific version, "latest" for the latest current version, or "lts" for the most recent LTS version. Optionally specify whether to install the 32 or 64 bit version (defaults to system arch). Set [arch] to "all" to install 32 AND 64 bit versions. Add --insecure to the end of this command to bypass SSL validation of the remote download server.
+	
+	nvm list [available]: List the node.js installations. Type available at the end to show a list of versions available for download.
+
+	nvm version: Displays the current running version of NVM for Windows.
+	
+	nvm uninstall <version>: Uninstall a specific version.
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+	
+node -v
+npm -v
+nvm install 12.18.3
+
+
+Goto CMD and install 'npm'
+
+	npm install -g npm
+
+
+Goto CMD and install 'nodemon'
+
+	npm install -g nodemon
+	
+
+Goto CMD and install 'serve'
+
+	npm install -g serve
+	or
+	npm i -g serve@10.0.1
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+[::: Install all modules under package.json in any project :::]
+
+Goto CMD and goto project folder
+	npm install
+		without any argument will install all packages found in package.json in node_modules folder.
+		
+	example:
+		cd "D:\$Avanza.Products\Maverick\backoffice-portal\"
+		npm install
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+[::: Uninstall all modules under package.json in any project :::]
+
+Goto CMD and goto project folder
+	npm install
+		without any argument will install all packages found in package.json in node_modules folder.
+		
+	example:
+		cd "D:\$Avanza.Products\Maverick\backoffice-portal\"
+		npx npkill
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+Run the static site	
+	-----------------------------------------------------------------------------------
+	[::: BACKOFFICE PORTAL :::]
+		cd "D:\$Avanza.Products\Maverick\backoffice-portal\"
+		node scripts/build.js
+		
+	your port may be excluded by some reasons. therefore,
+	open CMD (command line) under admin rights and run :
+
+		net stop winnat
+		net start winnat
+		
+	then
+		serve "D:\$Avanza.Products\Maverick\backoffice-portal\build"
+		serve -s build
+		serve -s "D:\$Avanza.Products\Maverick\backoffice-portal\build" -l 4045
+		
+		npm start -- --port 3200 -- host 10.0.0.1
+	
+	-----------------------------------------------------------------------------------
+	[::: BACKOFFICE API :::]
+		cd "D:\$Avanza.Products\Maverick\backoffice-api"
+		node api/server.js
+		
+		serve "D:\$Avanza.Products\Maverick\backoffice-api\api"
+	
+	-----------------------------------------------------------------------------------
+	[::: CONSUMER PORTAL :::]
+		cd "D:\$Avanza.Products\Maverick\consumer-portal"
+		node scripts/build.js
+		
+		serve "D:\$Avanza.Products\Maverick\consumer-portal\build"
+		serve -s build
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+

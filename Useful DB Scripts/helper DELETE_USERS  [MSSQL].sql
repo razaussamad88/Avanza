@@ -1,0 +1,75 @@
+
+
+IF OBJECT_ID('helper_SP_DELETE_USER', 'P') IS NOT NULL
+	Drop PROCEDURE helper_SP_DELETE_USER
+GO
+
+
+CREATE PROCEDURE helper_SP_DELETE_USER(@rUserName varchar(50)) as 
+BEGIN
+	SET NOCOUNT ON;
+
+
+	SELECT LOGIN_ID, GROUP_ID INTO #tmp_SEC_USER_GROUP
+	FROM SEC_USER_GROUP WHERE GROUP_ID = @rUserName;
+
+
+	-- ##### BRANCH #####
+	DELETE 
+	-- SELECT *
+	FROM SEC_USER_BRANCH 
+	WHERE LOGIN_ID = @rUserName;
+
+	
+	-- ##### ENTITY #####
+	DELETE 
+	-- SELECT *
+	FROM SEC_USER_ENTITY 
+	WHERE LOGIN_ID = @rUserName;
+
+	
+	-- ##### TOKEN #####
+	DELETE 
+	-- SELECT *
+	FROM SEC_OAUTH_TOKEN
+	WHERE LOGIN_ID = @rUserName;
+	
+	-- ##### USER GROUP #####	
+	DELETE 
+	-- SELECT *
+	FROM SEC_USER_GROUP 
+	WHERE LOGIN_ID = @rUserName;
+
+	
+	-- ##### PWD HISTORY #####
+	DELETE 
+	-- SELECT *
+	FROM SEC_PWD_HISTORY
+	WHERE LOGIN_ID = @rUserName;
+
+	
+	-- ##### DASHBORAD USER #####
+	DELETE 
+	-- SELECT *
+	FROM DASHBORAD_WIDGETS_MAPPING
+	WHERE USER_PAGE_ID in (
+		SELECT ID
+		FROM DASHBORAD_USER_PAGES
+		WHERE LOGIN_ID = @rUserName
+	);
+
+	DELETE 
+	-- SELECT *
+	FROM DASHBORAD_USER_PAGES
+	WHERE LOGIN_ID = @rUserName;
+
+	
+	-- ##### USER #####
+	DELETE 
+	-- SELECT *
+	FROM SEC_USER
+	WHERE LOGIN_ID = @rUserName;
+	
+END
+-- exec helper_SP_DELETE_USER
+

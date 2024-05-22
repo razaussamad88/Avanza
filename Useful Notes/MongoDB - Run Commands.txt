@@ -1,0 +1,248 @@
+
+
+
+************************************************
+===        P R E  -  R E Q U I S T E        ===  
+************************************************
+	
+	- Visual Studio Code 				( https://code.visualstudio.com/updates/v1_10   
+										  or any latest
+										  https://code.visualstudio.com/download/ )
+										  
+	- NodeJS v12.18.3					( https://nodejs.org/dist/v12.18.3/ )
+	- NVM (nvm-windows)					( https://github.com/coreybutler/nvm-windows/releases )
+	- MongoDB Community Edition v4.4	( https://www.mongodb.com/try/download/community 
+										  https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.18-signed.msi )
+	- Robo 3T / Studio 3T for MongoDB	( https://studio3t.com/download/ )
+	- Redis 3.0							( https://github.com/MicrosoftArchive/redis/releases/download/win-3.0.504/Redis-x64-3.0.504.msi )
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+Goto CMD and type
+
+	cd "C:\Program Files\MongoDB\Server\4.4\bin\"
+	mongod --version
+
+Output:
+-----------------------------------------------------------------------------------
+	db version v4.4.18
+	Build Info: {
+		"version": "4.4.18",
+		"gitVersion": "8ed32b5c2c68ebe7f8ae2ebe8d23f36037a17dea",
+		"modules": [],
+		"allocator": "tcmalloc",
+		"environment": {
+			"distmod": "windows",
+			"distarch": "x86_64",
+			"target_arch": "x86_64"
+		}
+	}
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+start powershell or Command Prompt as Administrator to use nvm-windows
+
+	nvm current: Display active version.
+	
+	nvm install <version> [arch]: 
+		The version can be a specific version, "latest" for the latest current version, or "lts" for the most recent LTS version. Optionally specify whether to install the 32 or 64 bit version (defaults to system arch). Set [arch] to "all" to install 32 AND 64 bit versions. Add --insecure to the end of this command to bypass SSL validation of the remote download server.
+	
+	nvm list [available]: List the node.js installations. Type available at the end to show a list of versions available for download.
+
+	nvm version: Displays the current running version of NVM for Windows.
+	
+	nvm uninstall <version>: Uninstall a specific version.
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+	
+node -v
+npm -v
+nvm install 12.18.3
+
+
+Goto CMD and install 'npm'
+
+	npm install -g npm
+
+
+Goto CMD and install 'nodemon'
+
+	npm install -g nodemon
+	
+
+Goto CMD and install 'serve'
+
+	npm install -g serve
+	or
+	npm i -g serve@10.0.1
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+[::: Install all modules under package.json in any project :::]
+
+Goto CMD and goto project folder
+	npm install
+		without any argument will install all packages found in package.json in node_modules folder.
+		
+	example:
+		cd "D:\$Avanza.Products\Maverick\backoffice-portal\"
+		npm install
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+[::: Uninstall all modules under package.json in any project :::]
+
+Goto CMD and goto project folder
+	npm install
+		without any argument will install all packages found in package.json in node_modules folder.
+		
+	example:
+		cd "D:\$Avanza.Products\Maverick\backoffice-portal\"
+		npx npkill
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+Run the static site	
+	-----------------------------------------------------------------------------------
+	[::: BACKOFFICE PORTAL :::]
+		cd "D:\$Avanza.Products\Maverick\backoffice-portal\"
+		node scripts/build.js
+		
+	your port may be excluded by some reasons. therefore,
+	open CMD (command line) under admin rights and run :
+
+		net stop winnat
+		net start winnat
+		
+	then
+		serve "D:\$Avanza.Products\Maverick\backoffice-portal\build"
+		serve -s build
+		serve -s "D:\$Avanza.Products\Maverick\backoffice-portal\build" -l 4045
+		
+		npm start -- --port 3200 -- host 10.0.0.1
+	
+	-----------------------------------------------------------------------------------
+	[::: BACKOFFICE API :::]
+		cd "D:\$Avanza.Products\Maverick\backoffice-api"
+		node api/server.js
+		
+		serve "D:\$Avanza.Products\Maverick\backoffice-api\api"
+	
+	-----------------------------------------------------------------------------------
+	[::: CONSUMER PORTAL :::]
+		cd "D:\$Avanza.Products\Maverick\consumer-portal"
+		node scripts/build.js
+		
+		serve "D:\$Avanza.Products\Maverick\consumer-portal\build"
+		serve -s build
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+[Install Redis 3.0]
+cd "D:\$Avanza.Products\BBK_ICMUpgrade\Supportive Application\Redis.v.3.0\msvs\x64\Debug\"
+	
+	redis-server.exe --service-install redis.windows-service.conf --loglevel verbose
+	
+	
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ 
+
+rs.initiate()
+
+
+db.createUser(
+  {
+	user: "admin",
+	pwd: "abcd@1234",
+	roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+);
+
+
+db.createUser(
+  {
+	user: "admin",
+	pwd: "abcd@1234",
+	roles: [ 
+		{ role: "userAdminAnyDatabase", db: "admin" },
+		{ role: "dbAdminAnyDatabase", db: "admin" },
+		{ role: "readWriteAnyDatabase", db: "admin" } 
+	]
+  }
+);
+
+
+db.dropUser("admin");
+
+
+
+
+use open-api
+
+db.createUser(
+  {
+	user: "open-api",
+	pwd: "abcd@1234",
+	roles: [ { role: "readWrite", db: "open-api" } ],
+	passwordDigestor: "server"
+  }
+)
+
+
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+[Update Windows Group Policy]
+cmd ->
+
+	gpupdate /force
+	GPRESULT /H GPReport.html
+	
+	gpupdate
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+	
+[key: avanza / avanza]
+
+cd C:\Program Files\Git\usr\bin\
+
+	openssl genrsa -out rootCA.key 2048
+	
+	openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
+ 
+	openssl genrsa -des3 -out server.key 2048
+	
+	openssl req -new -key server.key -out server.csr
+	openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 500 -sha256
+	cat server.key server.crt > server.pem
+	 
+	 
+	openssl genrsa -des3 -out client.key 2048
+	openssl req -new -key client.key -out client.csr
+	openssl x509 -req -in client.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out client.crt -days 500 -sha256
+	cat client.key client.crt > client.pem
+	 
+	# certifacates provided in 'backoffice-api' repo in 'sslcert' folder
+	# above is for new certifcate generation only
+
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+mongod --port 27019 --dbpath /home/mir/Desktop/workspace/ssl/data/db0  --sslMode requireSSL --sslPEMKeyFile /home/mir/Desktop/workspace/ssl/server.pem --sslCAFile /home/mir/Desktop/workspace/ssl/rootCA.pem  --sslDisabledProtocols none --bind_ip 127.0.0.1,10.0.2.15 
+
+
+mongod --port 27017 --bind_ip 127.0.0.1
+
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+taskkill /F /IM node.exe*
+

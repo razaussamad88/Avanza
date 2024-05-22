@@ -1,0 +1,133 @@
+
+Compiled By :	Raza-us-Samad
+Created On  :	‎April ‎5, ‎2023
+
+
+========================================================================================================
+*****    R E D I S   C O M M O N   C O M M A N D S
+--------------------------------------------------------------------------------------------------------
+
+cd /d "D:\$Avanza.Products\BBK_ICMUpgrade\Supportive Application\Redis.v.3.0\msvs\x64\Debug"
+
+	redis-cli
+	
+	AUTH "abcd@1234"
+	SET key1947 val1947
+	GET key1947
+	
+	DBSIZE
+	KEYS *
+	SYNC
+	FLUSHDB 
+	FLUSHALL 
+	
+	DEL key1947
+	
+	CLUSTER MYID
+	INFO SERVER
+	
+	CLUSTER NODES
+	CLUSTER SLOTS
+	
+	CLUSTER REPLICAS node-id
+	CLUSTER SLAVES node-id
+	
+	QUIT 
+	
+	
+========================================================================================================
+*****    I N S T A L L   R E D I S   O N   W I N D O W S
+--------------------------------------------------------------------------------------------------------
+
+Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
+
+> sudo apt-get update
+> sudo apt-get upgrade
+> sudo apt-get install redis-server
+> redis-cli -v
+
+
+sudo service redis-server restart
+
+sudo service redis-server stop
+
+redis-cli 
+
+
+
+
+https://redis.io/docs/getting-started/installation/install-redis-on-windows/
+
+user: avanza
+password : avanza
+
+
+- Run Ubuntu from start menu.
+execute
+	sudo service redis-server start
+	
+	
+	sudo vim /etc/redis/redis.conf
+
+	
+open Windows Explorer e type the path \\wsl$ it will list all your installed	
+
+
+
+
+========================================================================================================
+*****    R E D I S   C L U S T E R
+--------------------------------------------------------------------------------------------------------
+
+
+https://redis.io/docs/management/optimization/benchmarks/
+
+
+
+redis-server -v
+
+redis-cli -h SERVER-IP -a YOURPASSWORD
+redis-cli -h 172.16.0.211 -a Stars123?
+
+
+redis://user:password@host:port/dbnum
+$ redis-cli -u redis://LJenkins:p%40ssw0rd@redis-16379.hosted.com:16379/0 PING
+PONG
+
+
+redis-cli -u redis://admin12:Stars123?@172.16.0.211:7000
+redis-cli -u redis://avanza:avanza@127.0.0.1:6379/0 PING
+redis-cli -u redis://admin12:Stars123?@172.16.0.211:6379/0 PING
+
+
+redis-cli --cluster check 172.16.0.211::6379
+
+
+
+
+redis-cli -h 172.16.0.211 -p 7000
+redis-cli -u redis://user:pass@host:port
+
+
+	
+	
+redis://@172.16.0.211:7000
+	
+	
+	
+	
+redis-cli -h 172.16.0.211 -p 7000
+redis-cli -h 172.16.0.212 -p 7000	( slave  ->  master 172.16.0.216 )
+redis-cli -h 172.16.0.213 -p 7000
+
+redis-cli -h 172.16.0.214 -p 7001
+redis-cli -h 172.16.0.215 -p 7001
+redis-cli -h 172.16.0.216 -p 7001	( master  ->  slave 172.16.0.212 )
+
+
+	sudo shutdown -r -t 30
+	sudo shutdown -r now
+	
+	SYNC
+	
+	

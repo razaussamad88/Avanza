@@ -1,0 +1,10 @@
+
+    /*
+     NOTE:
+     'TC05' Oracle table's column 'TRIM_PAN' is computed.
+     EDMX unable to set oracle computed columns automatically.
+     Follow below steps to fix Virtual Column Oracle issue.
+
+        1. Right-Click on Column and Select properties
+        2. Make sure that Null-able property is False and StoreGeneratedPattern is Computed.
+    */

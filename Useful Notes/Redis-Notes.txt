@@ -1,0 +1,87 @@
+
+
+
+How to test redis cluster
+1. set key val using redis console
+2. insert value using custom utility
+***************************************************
+
+Problem....
+1. after restart slave become master, and reset the last master recordset to 0 dbsize.
+2. after restart replica doesn't convert back to master.
+
+
+
+[https://www.educba.com/redis-master-slave/]
+
+
+
+
+
+
+[https://superuser.com/questions/1390947/original-redis-master-does-not-become-good-slave-after-failover]
+
+
+I have found my problem. My configuration has password authentication. The initial configuration had masterauth set for both slaves, but I did not add it to the master (since it didn't need it). When it failed over, the master became a slave, but since it didn't have the masterauth password set, it could not replicate and thus sentinel wisely refused to select it as the new master after that. Fix: Add masterauth password to my original master (RedisA).
+------------------------------------------------------
+
+
+
+
+
+
+
+admin12@ubunturedis1:~$ redis-cli -h 172.16.0.211 -p 7000
+172.16.0.211:7000> CLUSTER NODES
+4bf560cebde00228f6f3f6f3ccf09a7c2ecb1780 172.16.0.214:7001@17001 slave b1683d8db2c29bf85bf750233ad10a7d9e4f0270 0 1683868731775 4 connected
+fac3f0f164404da150d9229b2f5788ea7e424e1b 172.16.0.211:7000@17000 myself,master - 0 1683868731000 1 connected 0-5460
+05fc910f3e42cc33efe538c859ec609347079188 172.16.0.216:7001@17001 slave 56e1de01135c7fa64a7f12ee6adef8957e667c71 0 1683868732779 6 connected
+b1683d8db2c29bf85bf750233ad10a7d9e4f0270 172.16.0.213:7000@17000 master - 0 1683868729000 3 connected 10923-16383
+56e1de01135c7fa64a7f12ee6adef8957e667c71 172.16.0.212:7000@17000 master - 0 1683868730770 2 connected 5461-10922
+96ae50be3f0440e6c96989dd59423a9b3a9996ae 172.16.0.215:7001@17001 slave fac3f0f164404da150d9229b2f5788ea7e424e1b 0 1683868729766 5 connected
+172.16.0.211:7000> dbsize
+(integer) 0
+172.16.0.211:7000> dbsize
+(integer) 4
+172.16.0.211:7000>
+
+
+
+muhammad.raza@avanzasolutions.com
+Google@1988pk
+
+
+Server name: smtp.office365.com
+Port: 587
+Encryption method: STARTTLS
+
+
+Server name: outlook.office365.com
+Port: 993
+Encryption method: TLS
+
+
+
+[POP]
+Server name: outlook.office365.com
+Port: 995
+Encryption method: TLS
+
+
+
+------------------------------------------------------
+
+use REPLICAOF NO ONE to promote a slave to master
+
+CLUSTER REPLICATE 56e1de01135c7fa64a7f12ee6adef8957e667c71
+
+
+
+[https://redis.io/commands/cluster-failover/]
+
+CLUSTER FAILOVER 
+
+A manual failover is a special kind of failover that is usually executed when there are no actual failures, but we wish to swap the current master with one of its replicas (which is the node we send the command to), in a safe way, without any window for data loss.
+------------------------------------------------------
+
+

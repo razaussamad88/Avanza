@@ -1,0 +1,25 @@
+
+
+
+
+/** Insert Group-Wise Permission **/
+
+Insert into SEC_GROUP_PERMISSION (GROUP_ID,PERMISSION_ID,CAN_CREATE,CAN_UPDATE,CAN_DELETE,IS_AUDITING_ALLOWED,SEQUENCE,CREATED_ON,CREATED_BY,UPDATED_ON,UPDATED_BY) 
+
+Select 'superadmin',PERMISSION_ID,1,1,1,1,4,GetDate(),'RX-SCRIPT',GetDate(),'RX-SCRIPT' FROM SEC_PERMISSION WHERE PERMISSION_ID not in (
+	Select PERMISSION_ID FROM SEC_GROUP_PERMISSION where lower(group_id) = 'superadmin'
+);
+/** Insert Group-Wise Permission **/
+
+
+
+
+/** Insert Permission Map **/
+Insert into SEC_APP_PERMISSION_MAP (PERMISSION_ID,APP_ID,CREATED_ON) 
+
+Select PERMISSION_ID,'backoffice',GETDATE() FROM SEC_PERMISSION WHERE PERMISSION_ID not in (
+	Select PERMISSION_ID FROM SEC_APP_PERMISSION_MAP
+);
+/** Insert Permission Map **/
+
+

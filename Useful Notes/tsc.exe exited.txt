@@ -1,0 +1,5 @@
+
+tsc.exe exited with code 1
+
+
+to resolve above issue. Install TypeScript.

@@ -1,0 +1,20 @@
+imp system/password@sid file=(filename) log=imp.log fromuser=(existing user) touser=(new user)
+
+exp scott/tiger tables=emp query="where deptno=10"
+exp scott/tiger file=abc.dmp tables=abc query=\"where sex=\'f\'\" rows=yes
+
+exp scott/tiger file=emp.dmp log=emp.log tables=emp rows=yes indexes=no
+exp scott/tiger file=emp.dmp tables=(emp,dept)
+---------------------------
+
+drop user vision cascade
+create user vision identified by vision
+grant all privilege to vision identified by vision
+
+---cmd----
+imp
+username :vision as sysdba
+pass: vision
+path:
+yesAll
+vision
