@@ -19,9 +19,9 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Navigate to Workspace
-      run: 
-        cd $GITHUB_WORKSPACE
-        echo $GITHUB_WORKSPACE
+      run: |
+          echo ${{ github.workspace }}
+          echo $GITHUB_WORKSPACE
     
     - name: Restore dependencies
       run: dotnet restore
