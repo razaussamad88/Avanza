@@ -22,6 +22,8 @@ jobs:
     - name: Setup MSBuild
       #uses: microsoft/setup-msbuild@v1
       uses: microsoft/setup-msbuild@v2
+      with:
+        vs-version: '14.0'
 
     - name: Setup NuGet
       #uses: NuGet/setup-nuget@v1.0.2
@@ -49,7 +51,7 @@ jobs:
       
     - name: Build Solution ThreadPool.Net2.0
       run: |
-        msbuild.exe "ThreadPoolConsoleApp/ThreadPoolConsoleApp.csproj" /p:platform="Any CPU" /p:configuration="Release" 
+        msbuild.exe *.*proj /p:platform="Any CPU" /p:configuration="Release" 
         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
