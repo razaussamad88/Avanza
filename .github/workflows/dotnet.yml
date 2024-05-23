@@ -8,7 +8,7 @@ on:
   pull_request:
     branches: [ "Utilities" ]
     paths:
-    - 'ThreadPool.Net2.0/ThreadPoolConsoleApp/**'
+    - 'Avanza/ThreadPool.Net2.0/ThreadPoolConsoleApp/**'
 
 jobs:
   build:
@@ -17,9 +17,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Navigate to Workspace
+      run: 
+        cd $GITHUB_WORKSPACE
+        echo $GITHUB_WORKSPACE
+    
     - name: Restore dependencies
       run: dotnet restore
+    
     - name: Build ThreadPool.Net2.0
       run: dotnet build --no-restore
+    
     - name: Test ThreadPool.Net2.0
       run: dotnet test --no-build --verbosity normal
