@@ -21,8 +21,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-        with:
-          path: Utilities
 
     - run: ls -R
     
