@@ -5,6 +5,9 @@ name: .NET
 
 on:
   push:
+    branches: 'Utilities/**'
+    paths:
+    - 'ThreadPool.Net2.0/ThreadPoolConsoleApp/**'
   pull_request:
     branches: 'Utilities/**'
     paths:
