@@ -51,7 +51,7 @@ jobs:
       
     - name: Build Solution ThreadPool.Net2.0
       run: |
-        msbuild.exe *.*proj /p:platform="Any CPU" /p:configuration="Release" 
+        msbuild.exe *.*proj
         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
