@@ -6,7 +6,7 @@ name: .NET
 on:
   push:
   pull_request:
-    branches: [ "Utilities" ]
+    branches: Utilities
     paths:
     - 'ThreadPool.Net2.0/ThreadPoolConsoleApp/**'
 
@@ -15,14 +15,13 @@ jobs:
 
     runs-on: windows-latest
     
-    #defaults:
-    #  run:
-    #    working-directory: ThreadPool.Net2.0/ThreadPoolConsoleApp
+    defaults:
+      run:
+        working-directory: ThreadPool.Net2.0/ThreadPoolConsoleApp
 
     steps:
-    #- uses: actions/checkout@v4
+    - uses: actions/checkout@v4
     #- uses: actions/checkout@v2
-    - uses: actions/checkout@Utilities
 
     - run: ls -R
     
