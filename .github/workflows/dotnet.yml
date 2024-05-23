@@ -14,9 +14,6 @@ jobs:
   build:
 
     runs-on: windows-latest
-    strategy:
-      matrix:
-        nuget: [latest, preview, 4.x, 5.3.1]
 
     steps:
     - uses: actions/checkout@v4
@@ -30,8 +27,7 @@ jobs:
       uses: nuget/setup-nuget@v2
       with:
         nuget-api-key: ${{ secrets.NuGetAPIKey }}
-        nuget-version: ${{ matrix.nuget }}
-    #- run: nuget restore MyProject.sln
+        nuget-version: latest
 
     - name: Navigate to Workspace
       run: |
@@ -44,15 +40,16 @@ jobs:
     - name: Create Build Directory
       run: mkdir _build
       
-    - name: Restore Packages
-      run: nuget restore ThreadPoolConsoleApp.sln
+    #- name: Restore Packages
+    #  run: nuget restore ThreadPoolConsoleApp.sln
           
     #- name: Restore dependencies
     #  run: dotnet restore
       
     - name: Build Solution ThreadPool.Net2.0
       run: |
-        msbuild.exe ThreadPoolConsoleApp.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
+        # msbuild.exe ThreadPoolConsoleApp.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
+        msbuild.exe ThreadPoolConsoleApp.sln /nologo /nr:false /p:DeployOnBuild=false /p:platform="Any CPU" /p:configuration="Release" 
         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
