@@ -8,7 +8,7 @@ on:
   pull_request:
     branches: [ "Utilities" ]
     paths:
-    - 'Avanza/ThreadPool.Net2.0/ThreadPoolConsoleApp/**'
+    - 'ThreadPool.Net2.0/ThreadPoolConsoleApp/**'
 
 jobs:
   build:
@@ -22,6 +22,11 @@ jobs:
       run: |
           echo ${{ github.workspace }}
           echo $GITHUB_WORKSPACE
+          echo ${{ github.repository }}
+          echo $GITHUB_REPOSITORY
+          echo ${{ github.workflow.ref }}
+          echo $GITHUB_WORKFLOW_REF
+          
     
     - name: Restore dependencies
       run: dotnet restore
