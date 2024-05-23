@@ -50,14 +50,8 @@ jobs:
     #  run: dotnet restore
       
     - name: Build Solution ThreadPool.Net2.0
-    #  run: |
-    #    msbuild.exe ThreadPoolConsoleApp.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
-    #    msbuild.exe ThreadPoolConsoleApp.sln
-    #    msbuild.exe xxxxx.cproj /t:Rebuild
-    #    msbuild.exe ThreadPoolConsoleApp.sln /p:Configuration="Release" /p:Platform="x86"
-    #    msbuild.exe ThreadPoolConsoleApp.sln -target:NotInSlnfolder:Rebuild;
       run: |
-        msbuild ThreadPool.Net2.0/ThreadPoolConsoleApp/ThreadPoolConsoleApp/ThreadPoolConsoleApp.csproj -target:NotInSlnfolder:Rebuild;
+        msbuild 'ThreadPool.Net2.0/ThreadPoolConsoleApp/ThreadPoolConsoleApp/ThreadPoolConsoleApp.csproj' -target:NotInSlnfolder:Rebuild;
         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
