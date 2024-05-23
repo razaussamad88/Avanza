@@ -49,7 +49,7 @@ jobs:
       
     - name: Build Solution ThreadPool.Net2.0
       run: |
-        msbuild.exe ThreadPoolConsoleApp.sln /p:platform="Any CPU" /p:configuration="Release" 
+        msbuild.exe "ThreadPoolConsoleApp/ThreadPoolConsoleApp.csproj" /p:platform="Any CPU" /p:configuration="Release" 
         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
