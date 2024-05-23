@@ -14,6 +14,9 @@ jobs:
   build:
 
     runs-on: windows-latest
+    strategy:
+      matrix:
+        nuget: [latest, preview, 4.x, 5.3.1]
 
     steps:
     - uses: actions/checkout@v4
@@ -23,7 +26,12 @@ jobs:
       uses: microsoft/setup-msbuild@v1
 
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
+      #uses: NuGet/setup-nuget@v1.0.2
+      uses: nuget/setup-nuget@v2
+      with:
+        nuget-api-key: ${{ secrets.NuGetAPIKey }}
+        nuget-version: ${{ matrix.nuget }}
+    #- run: nuget restore MyProject.sln
 
     - name: Navigate to Workspace
       run: |
