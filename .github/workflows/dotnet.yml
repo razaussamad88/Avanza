@@ -57,7 +57,7 @@ jobs:
     #    msbuild.exe ThreadPoolConsoleApp.sln /p:Configuration="Release" /p:Platform="x86"
     #    msbuild.exe ThreadPoolConsoleApp.sln -target:NotInSlnfolder:Rebuild;
       run: |
-        msbuild ThreadPoolConsoleApp/ThreadPoolConsoleApp.csproj -target:NotInSlnfolder:Rebuild;
+        msbuild ThreadPool.Net2.0/ThreadPoolConsoleApp/ThreadPoolConsoleApp/ThreadPoolConsoleApp.csproj -target:NotInSlnfolder:Rebuild;
         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
