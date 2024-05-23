@@ -24,12 +24,9 @@ jobs:
           echo $GITHUB_WORKSPACE
           echo ${{ github.repository }}
           echo $GITHUB_REPOSITORY
-          echo ${{ github.workflow_ref }}
-          echo $GITHUB_WORKFLOW_REF
           
-    
-    - name: Restore dependencies
-      run: dotnet restore
+    #- name: Restore dependencies
+    #  run: dotnet restore
       
     - name: Build Solution ThreadPool.Net2.0
       run: |
