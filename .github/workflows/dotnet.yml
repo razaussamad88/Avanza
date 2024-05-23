@@ -51,7 +51,7 @@ jobs:
       
     - name: Build Solution ThreadPool.Net2.0
       run: |
-        msbuild 'ThreadPoolConsoleApp/ThreadPoolConsoleApp.csproj' -target:NotInSlnfolder:Rebuild;
+        dotnet build ./ThreadPoolConsoleApp.sln
         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
